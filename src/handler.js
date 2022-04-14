@@ -65,7 +65,7 @@ const getAllBooksHandler = (request, h) => {
   return response;
 };
 
-const getBooksByIdHandler = (request, h) => {
+const getBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
   const book = books.filter((b) => b.id === bookId)[0];
 
@@ -159,7 +159,7 @@ const addBookHandler = (request, h) => {
   return response;
 };
 
-const deleteBooksByIdHandler = (request, h) => {
+const deleteBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
   const index = books.findIndex((book) => book.id === bookId);
 
@@ -180,7 +180,7 @@ const deleteBooksByIdHandler = (request, h) => {
   return response;
 };
 
-const editBooksByIdHandler = (request, h) => {
+const editBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
 
   const {
@@ -249,7 +249,7 @@ const editBooksByIdHandler = (request, h) => {
 module.exports = {
   addBookHandler,
   getAllBooksHandler,
-  getBooksByIdHandler,
-  deleteBooksByIdHandler,
-  editBooksByIdHandler,
+  getBookByIdHandler,
+  deleteBookByIdHandler,
+  editBookByIdHandler,
 };
