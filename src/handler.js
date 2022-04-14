@@ -6,7 +6,6 @@ const getAllBooksHandler = (request, h) => {
 
   if (name !== undefined) {
     const getHandler = books.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
-
     const response = h.response({
       status: 'success',
       data: {
@@ -23,7 +22,6 @@ const getAllBooksHandler = (request, h) => {
 
   if (reading !== undefined) {
     const book = books.filter((b) => Number(b.reading) === Number(reading));
-
     const response = h.response({
       status: 'success',
       data: {
@@ -40,7 +38,6 @@ const getAllBooksHandler = (request, h) => {
 
   if (finished !== undefined) {
     const book = books.filter((b) => Number(b.finished) === Number(finished));
-
     const response = h.response({
       status: 'success',
       data: {
@@ -54,7 +51,6 @@ const getAllBooksHandler = (request, h) => {
     response.code(200);
     return response;
   }
-
   const response = h.response({
     status: 'success',
     data: {
@@ -83,7 +79,6 @@ const getBooksByIdHandler = (request, h) => {
     response.code(200);
     return response;
   }
-
   const response = h.response({
     status: 'fail',
     message: 'Buku tidak ditemukan',
@@ -156,7 +151,6 @@ const addBookHandler = (request, h) => {
     response.code(201);
     return response;
   }
-
   const response = h.response({
     status: 'error',
     message: 'Buku gagal ditambahkan',
@@ -178,7 +172,6 @@ const deleteBooksByIdHandler = (request, h) => {
     response.code(200);
     return response;
   }
-
   const response = h.response({
     status: 'fail',
     message: 'Buku gagal dihapus. Id tidak ditemukan',
@@ -238,7 +231,6 @@ const editBooksByIdHandler = (request, h) => {
       finished,
       updatedAt,
     };
-
     const response = h.response({
       status: 'success',
       message: 'Buku berhasil diperbarui',
@@ -246,7 +238,6 @@ const editBooksByIdHandler = (request, h) => {
     response.code(200);
     return response;
   }
-
   const response = h.response({
     status: 'fail',
     message: 'Gagal memperbarui buku. Id tidak ditemukan',
